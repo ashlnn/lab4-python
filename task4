@@ -1,0 +1,8 @@
+def find_longest(words):
+    return max(words, key=len)
+
+words = input("Введіть слова через пробіл: ").split()
+longest = find_longest(words)
+
+print("Список:", words)
+print("Найдовше слово:", longest)

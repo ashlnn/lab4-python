@@ -1,0 +1,27 @@
+# Введення довжини масиву
+n = int(input("Введіть довжину масиву: "))
+
+# Введення елементів масиву
+arr = []
+print(f"Введіть {n} чисел:")
+
+for i in range(n):
+    num = int(input(f"Елемент {i+1}: "))
+    arr.append(num)
+
+# Обчислення добутку ненульових непарних елементів
+product = 1
+has_odd_nonzero = False
+
+for num in arr:
+    if num != 0 and num % 2 == 1:
+        product *= num
+        has_odd_nonzero = True
+
+# Виведення результату
+print(f"Масив: {arr}")
+
+if has_odd_nonzero:
+    print(f"Добуток ненульових непарних елементів: {product}")
+else:
+    print("Ненульових непарних елементів не знайдено!")

@@ -1,0 +1,8 @@
+# Створюємо і виводимо масив одночасно
+n = 7
+values = [4, 5, 6, 7, 6, 5, 4]
+
+print("Двовимірний масив 7x7:")
+for i in range(n):
+    row = [values[i]] * n
+    print(' '.join(str(x) for x in row))

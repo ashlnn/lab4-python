@@ -1,0 +1,33 @@
+def find_missing_products(all_products, stores):
+    """
+    Знаходить продукти, яких немає в жодному магазині
+    """
+    # Об'єднуємо всі продукти з усіх магазинів
+    available_products = set()
+    for store in stores:
+        available_products.update(store)
+    
+    # Знаходимо продукти, яких немає в магазинах
+    missing_products = all_products - available_products
+    return missing_products
+
+# Введення всіх продуктів
+print("Введіть всі продукти через пробіл:")
+all_products = set(input().split())
+
+# Введення кількості магазинів
+m = int(input("Введіть кількість магазинів: "))
+
+# Введення асортименту кожного магазину
+stores = []
+for i in range(m):
+    print(f"Введіть продукти для магазину {i+1} через пробіл:")
+    store_products = set(input().split())
+    stores.append(store_products)
+
+# Знаходимо продукти, яких немає в магазинах
+missing = find_missing_products(all_products, stores)
+
+# Виводимо результати
+print("\nВсі продукти:", all_products)
+print("Множина продуктів, яких немає в жодному магазині:", missing)
